@@ -46,7 +46,7 @@ end
 #     "Helping"
 #   end
 # end
-
+set :haml, { ugly: true, format: :html5 }
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
