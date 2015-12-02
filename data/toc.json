@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Ruby Fundamentals & Programming Concepts",
+    "chapters": [
+      "First",
+      "Second",
+      "Third",
+      "Fourth",
+      "Fifth"
+    ]
+  },
+  {
+    "title": "JavaScript: How Even",
+    "chapters": [
+      "First",
+      "Second",
+      "Third",
+      "Fourth",
+      "Fifth"
+    ]
+  }
+]

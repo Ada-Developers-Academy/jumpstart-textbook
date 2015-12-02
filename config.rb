@@ -1,11 +1,13 @@
-###
-# Compass
-###
+# Methods defined in the helpers block are available in templates
+def dumb_link(string) #calling this dumb link because it handles 0 edge cases
+  string.downcase.gsub(/\W+/, '-')
+end
 
-# Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
+helpers do
+  def dumb_link(string) # I'll shave this yak later
+    string.downcase.gsub(/\W+/, '-')
+  end
+end
 
 ###
 # Page options, layouts, aliases and proxies
@@ -25,27 +27,17 @@
 # end
 
 # Proxy pages (https://middlemanapp.com/advanced/dynamic_pages/)
-# proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {
-#  :which_fake_page => "Rendering a fake page with a local variable" }
-
-###
-# Helpers
-###
-
-# Automatic image dimensions on image_tag helper
-# activate :automatic_image_sizes
+data.toc.each do |unit|
+  proxy "/#{ dumb_link unit.title }", '/unit.html',
+    locals: { title: unit.title, chapters: unit.chapters},
+    ignore: true
+end
 
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
 end
 
-# Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
 set :haml, { ugly: true, format: :html5 }
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
