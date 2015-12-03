@@ -61,10 +61,13 @@ Did we just write the world’s shortest “Hello World” program? Not exactly.
 
 Try doing some arithmetic in irb:
 
-* 2 + 3
-* 2 * 3
-* 2 ** 3
-* 4/3 (Note what Ruby does with the decimal places.)
+~~~ ruby
+2 + 3
+2 * 3
+2 ** 3
+4/3 (Note what Ruby does with the decimal places.)
+9001 - 9000
+~~~
 
 #### Math ain't hard!
 

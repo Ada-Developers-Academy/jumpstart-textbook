@@ -3,10 +3,6 @@ def dumb_link(string) #calling this dumb link because it handles 0 edge cases
   string.downcase.gsub(/\W+/, '-')
 end
 
-def read_file(chapter)
-  File.read("#{root_path}/chapters/#{dumb_link(chapter)}.md")
-end
-
 helpers do
   def dumb_link(string) # I'll shave this yak later
     string.downcase.gsub(/\W+/, '-')
@@ -34,7 +30,7 @@ end
 data.toc.each do |unit|
   unit.chapters.each do |chapter|
     proxy "/#{ dumb_link unit.title }/#{ dumb_link chapter }", "/chapter.html",
-    locals: { title: chapter, file: read_file(chapter) },
+    locals: { title: chapter, file: "#{root_path}/chapters/#{dumb_link(chapter)}.md" },
     ignore: true
   end
 end
