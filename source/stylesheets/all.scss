@@ -11,19 +11,20 @@ body {
   font-size: 16px;
 }
 
+code {
+  background: #eee;
+}
+
 h1 {
   font-size: 2rem;
   letter-spacing: -1px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
 }
 
-// syntax highlighting!
 pre {
-  background: #fff;
   padding: 0;
   line-height: 1.25;
   white-space: pre;
-  overflow-x: auto;
   word-break: inherit;
   word-wrap: inherit;
 }

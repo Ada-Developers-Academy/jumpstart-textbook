@@ -2,11 +2,10 @@
   {
     "title": "Ruby Fundamentals & Programming Concepts",
     "chapters": [
-      "Ruby 101"
+      "Ruby 101",
+      "Ruby 102",
+      "Ruby 103",
+      "Ruby 104"
     ]
-  },
-  {
-    "title": "JavaScript: How Even",
-    "chapters": []
   }
 ]

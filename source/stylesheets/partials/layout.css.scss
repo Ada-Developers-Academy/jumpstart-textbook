@@ -3,9 +3,9 @@
 }
 
 .toc {
-  @include span-columns(3);
+  @include span-columns(2);
 }
 
 .content {
-  @include span-columns(9);
+  @include span-columns(10);
 }
