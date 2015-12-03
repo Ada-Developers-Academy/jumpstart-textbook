@@ -35,20 +35,25 @@ data.toc.each do |unit|
   end
 end
 
-# all environments
-activate :syntax, line_numbers: true
-
-configure :development do
-  # Reload the browser automatically whenever files change
-  activate :livereload
-end
-
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
 set :relative_links, true
 set :haml, { ugly: true, format: :html5 }
 set :markdown_engine, :kramdown
+
+# all environments
+activate :syntax, line_numbers: true
+activate :deploy do |deploy|
+  deploy.method = :git
+  deploy.remote = 'git@github.com:Ada-Developers-Academy/textbook.git'
+  deploy.branch = 'gh-pages'
+end
+
+configure :development do
+  # Reload the browser automatically whenever files change
+  activate :livereload
+end
 
 # Build-specific configuration
 configure :build do
@@ -57,3 +62,4 @@ configure :build do
   activate :asset_hash
   activate :relative_assets
 end
+

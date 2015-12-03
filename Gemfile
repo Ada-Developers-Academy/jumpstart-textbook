@@ -3,6 +3,7 @@ source "https://rubygems.org"
 gem "middleman", "~>3.4.0"
 gem "middleman-syntax", "~>2.0.0" # syntax highlighting
 gem "middleman-livereload", "~> 3.1.0" # dynamic reloading on save
+gem 'middleman-deploy', '~> 1.0' # build and deploy!
 
 # css framework
 gem "bitters", "~>1.1.0"
