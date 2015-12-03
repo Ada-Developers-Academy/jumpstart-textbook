@@ -2,21 +2,11 @@
   {
     "title": "Ruby Fundamentals & Programming Concepts",
     "chapters": [
-      "First",
-      "Second",
-      "Third",
-      "Fourth",
-      "Fifth"
+      "Ruby 101"
     ]
   },
   {
     "title": "JavaScript: How Even",
-    "chapters": [
-      "First",
-      "Second",
-      "Third",
-      "Fourth",
-      "Fifth"
-    ]
+    "chapters": []
   }
 ]

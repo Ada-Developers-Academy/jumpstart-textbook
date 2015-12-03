@@ -3,6 +3,10 @@ def dumb_link(string) #calling this dumb link because it handles 0 edge cases
   string.downcase.gsub(/\W+/, '-')
 end
 
+def read_file(chapter)
+  File.read("#{root_path}/chapters/#{dumb_link(chapter)}.md")
+end
+
 helpers do
   def dumb_link(string) # I'll shave this yak later
     string.downcase.gsub(/\W+/, '-')
@@ -28,20 +32,27 @@ end
 
 # Proxy pages (https://middlemanapp.com/advanced/dynamic_pages/)
 data.toc.each do |unit|
-  proxy "/#{ dumb_link unit.title }", '/unit.html',
-    locals: { title: unit.title, chapters: unit.chapters},
+  unit.chapters.each do |chapter|
+    proxy "/#{ dumb_link unit.title }/#{ dumb_link chapter }", "/chapter.html",
+    locals: { title: chapter, file: read_file(chapter) },
     ignore: true
+  end
 end
 
-# Reload the browser automatically whenever files change
+# all environments
+activate :syntax, line_numbers: true
+
 configure :development do
+  # Reload the browser automatically whenever files change
   activate :livereload
 end
 
-set :haml, { ugly: true, format: :html5 }
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
+set :relative_links, true
+set :haml, { ugly: true, format: :html5 }
+set :markdown_engine, :kramdown
 
 # Build-specific configuration
 configure :build do
