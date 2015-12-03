@@ -1,13 +1,13 @@
-# If you do not have OpenSSL installed, update
-# the following line to use "http://" instead
-source 'https://rubygems.org'
+source "https://rubygems.org"
+
 gem "middleman", "~>3.4.0"
+gem "middleman-syntax", "~>2.0.0" # syntax highlighting
+gem "middleman-livereload", "~> 3.1.0" # dynamic reloading on save
 
-# add syntax highlighting
-gem "middleman-syntax", "~>2.0.0"
-
-# Live-reloading plugin
-gem "middleman-livereload", "~> 3.1.0"
+# css framework
+gem "bitters", "~>1.1.0"
+gem "bourbon", "~>4.2.6"
+gem "neat", "~>1.7.2"
 
 # For faster file watcher updates on Windows:
 gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
