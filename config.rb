@@ -29,7 +29,7 @@ end
 # Proxy pages (https://middlemanapp.com/advanced/dynamic_pages/)
 data.toc.each do |unit|
   unit.chapters.each do |chapter|
-    proxy "/#{ dumb_link unit.title }/#{ dumb_link chapter }", "/chapter.html",
+    proxy "/#{ dumb_link unit.title }/#{ dumb_link chapter }.html", "/chapter.html",
     locals: { title: chapter, file: "#{root_path}/chapters/#{dumb_link(chapter)}.md" },
     ignore: true
   end
@@ -41,8 +41,10 @@ set :images_dir, 'images'
 set :relative_links, true
 set :haml, { ugly: true, format: :html5 }
 set :markdown_engine, :kramdown
+set :site_url, ""
 
 # all environments
+activate :directory_indexes
 activate :syntax, line_numbers: true
 activate :deploy do |deploy|
   deploy.method = :git
@@ -61,5 +63,6 @@ configure :build do
   activate :minify_javascript
   activate :asset_hash
   activate :relative_assets
+  set :site_url, "/textbook"
 end
 

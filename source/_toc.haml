@@ -1,7 +1,7 @@
 %h1.toc-title Table of Contents
-%h2= link_to "Home", "/"
+%h2= link_to "Home", "#{site_url}/"
 - data.toc.each do |unit|
   %h2.toc-unit= unit.title
   %ol.toc-chapters
   - unit.chapters.each do |chapter|
-    %li.toc-chapter= link_to chapter, "/#{ dumb_link unit.title }/#{ dumb_link chapter }"
+    %li.toc-chapter= link_to chapter, "#{site_url}/#{ dumb_link unit.title }/#{ dumb_link chapter }"
