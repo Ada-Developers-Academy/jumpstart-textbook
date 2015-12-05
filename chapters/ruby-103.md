@@ -2,9 +2,9 @@
 
 ## Iterators
 
-_Iteration_ is the process of progromatically interacting with a collection of values, one at a time. We call it "looping" sometimes, and we do a lot of it. Here is a simple loop; fire up irb and give it a try:
+_Iteration_ is the process of programatically interacting with a collection of values, one at a time. We call it "looping" sometimes, and we do a lot of it. Here is a simple loop; fire up irb and give it a try:
 
-~~~ruby
+~~~ ruby
 10.times { |n| puts n } # So... what happened
 ~~~
 
@@ -21,7 +21,7 @@ Cool, right? `each` iterated the _Array_, starting with the first value, multipl
 
 ### Let's talk about Blocks...
 
-Blocks (also referred to as _closures_, especially in other languages like JavaScript) are not a unique features of Ruby, but they're one that many people talk about (and more people use without realizing it!) What is a block?
+Blocks are not a unique features of Ruby, but they're one that many people talk about (and more people use without realizing it!) What is a block?
 
 >A section of code which is grouped together.
 
@@ -31,7 +31,7 @@ A block is a piece of code that is not executed immediately, but is stored in a 
 
 Sound complicated? Let's look at some Ruby.
 
-~~~ruby
+~~~ ruby
 [1,2,3,4].each do |number|
   puts number * 100 # <= this is a block. :)
 end
@@ -41,7 +41,7 @@ end
 }
 ~~~
 
-`number * 100` is a chunk of code, similar to what would be in a method, but in this case we don't need to go through all the trouble of creating a method just to iterate over some numbers.
+`number * 100` is a chunk of code, similar to what would be in a method, but in this case we don't need to go through all the trouble of creating a method to iterate over some numbers.
 
 Block can be identified by either `do ... end` or `{ }`.
 

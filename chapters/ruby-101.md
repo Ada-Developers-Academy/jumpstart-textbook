@@ -10,15 +10,16 @@ Ruby is different than other programming languages. It was written with the huma
 
 Ruby was first written in 1993 by Yukihiro "Matz" Matsumoto. Many of the design concepts were taken from Perl and SmallTalk. One of the unique things about Ruby is the core cultural principles associated with the language, much of which was influenced by Matz.
 
-## Ruby is for People
+### Ruby is for People
 
-> "I hope to see Ruby help every programmer in the world to be productive, and to enjoy programming, and to be happy. That is the primary purpose of Ruby language."
+A well-written line of Ruby code can be read aloud, and a non-programmer should be able to understand it:
 
-A well-written line of Ruby code can be read aloud, and a non-programmer should be able to understand it.
+> "I hope to see Ruby help every programmer in the world to be productive, and to enjoy programming, and to be happy. That is the primary purpose of Ruby language." ~ Matz
 
-In the Ruby community, we try to focus on the people, not the machines.
 
-> Often people, especially computer engineers, focus on the machines. They think, "By doing this, the machine will run fast. By doing this, the machine will run more effectively. By doing this, the machine will something something something." They are focusing on machines. But in fact we need to focus on humans, on how humans care about doing programming or operating the application of the machines.
+In the Ruby community, we try to focus on the people, not the machines:
+
+> "Often people, especially computer engineers, focus on the machines. They think, "By doing this, the machine will run fast. By doing this, the machine will run more effectively. By doing this, the machine will something something something." They are focusing on machines. But in fact we need to focus on humans, on how humans care about doing programming or operating the application of the machines." ~ Matz
 
 ## MINASWAN: Matz Is Nice And So We Are Nice
 
@@ -48,7 +49,7 @@ A couple of ideas that you may notice being different from other programming lan
 - Flexible syntax, there are many ways to write the exact same code.
 
 
-### IRB
+#### IRB
 Ruby can be directly executed from your terminal using IRB (**I**nteractive **R**u **b**y). IRB is be a helpful tool for learning, quick computations, documentation, and debugging problems.
 
 From the command line, enter `irb`. Once you're in IRB, try inputting a string, like "hello world".
