@@ -1,18 +1,19 @@
 // Typography
 $base-font-family: $helvetica;
-$heading-font-family: $base-font-family;
-$sans-serif: 'Oxygen', $helvetica;
+$sans-serif: "pt-sans-narrow", $helvetica;
+$serif: "merriweather", Georgia, serif;
+$heading-font-family: $sans-serif;
 
 // Font Sizes
-$base-font-size: 1em;
+$base-font-size: 18px;
 
 // Line height
 $base-line-height: 1.5;
 $heading-line-height: 1.2;
 
 // Other Sizes
-$base-border-radius: 3px;
-$base-spacing: $base-line-height * 1em;
+$base-border-radius: 0.25rem;
+$base-spacing: $base-line-height * 1rem;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 

@@ -1,8 +1,9 @@
 body {
   color: $base-font-color;
-  font-family: $base-font-family;
+  font-family: $serif;
   font-feature-settings: "kern", "liga", "pnum";
   font-size: $base-font-size;
+  font-weight: 300;
   line-height: $base-line-height;
 }
 
@@ -18,7 +19,7 @@ h6 {
   margin: 0 0 $small-spacing;
 }
 
-p {
+p, table {
   margin: 0 0 $small-spacing;
 }
 

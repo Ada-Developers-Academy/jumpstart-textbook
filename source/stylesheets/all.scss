@@ -7,18 +7,17 @@
 @import "partials/layout";
 @import "partials/syntax";
 
-body {
-  font-size: 16px;
-}
-
 code {
   background: #eee;
 }
 
-h1 {
-  font-size: 2rem;
-  letter-spacing: -1px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+.chapter {
+  h1 { font-size: 3.5rem; }
+  h2 { font-size: 2.5rem; }
+  h3 { font-size: 1.75rem; }
+  h4 { font-size: 1.5rem; }
+
+  blockquote { font-style: italic; }
 }
 
 pre {

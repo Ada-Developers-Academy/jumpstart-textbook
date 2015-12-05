@@ -1,11 +1,13 @@
-#main {
+main {
   @include outer-container();
 }
 
 .toc {
   @include span-columns(2);
+  position: fixed;
 }
 
 .content {
-  @include span-columns(10);
+  @include span-columns(9);
+  @include shift(2);
 }
