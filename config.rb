@@ -30,7 +30,7 @@ end
 data.toc.each do |unit|
   unit.chapters.each do |chapter|
     proxy "/#{ dumb_link unit.title }/#{ dumb_link chapter }.html", "/chapter.html",
-    locals: { title: chapter, file: "#{root_path}/chapters/#{dumb_link(chapter)}.md" },
+    locals: { unit: unit.title, chapter: chapter, file: "#{root_path}/chapters/#{dumb_link(chapter)}.md" },
     ignore: true
   end
 end
