@@ -47,6 +47,7 @@ set :site_url, ""
 activate :directory_indexes
 activate :syntax, line_numbers: true
 activate :deploy do |deploy|
+  deploy.build_before = true
   deploy.method = :git
   deploy.remote = 'git@github.com:Ada-Developers-Academy/textbook.git'
   deploy.branch = 'gh-pages'
