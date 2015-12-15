@@ -2,6 +2,8 @@
 %h2= link_to "Home", "#{site_url}/"
 - data.toc.each do |unit|
   %h2.toc-unit= unit.title
-  %ol.toc-chapters
   - unit.chapters.each do |chapter|
-    %li.toc-chapter= link_to chapter, "#{site_url}/#{ dumb_link unit.title }/#{ dumb_link chapter }"
+    %h3.toc-chapter= chapter.title
+    %ol.toc-lectures
+    - chapter.lectures.each do |lecture|
+      %li.toc-lecture= link_to lecture, "#{site_url}/#{ dumb_link unit.title }/#{ dumb_link chapter.title}/#{ dumb_link lecture}"
