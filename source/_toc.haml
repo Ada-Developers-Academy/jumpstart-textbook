@@ -6,4 +6,4 @@
     %h3.toc-chapter= chapter.title
     %ol.toc-lectures
       - chapter.lectures.each do |lecture|
-        %li.toc-lecture= link_to lecture, "#{site_url}/#{ dumb_link unit.title }/#{ dumb_link chapter.title}/#{ dumb_link lecture}"
+        %li.toc-lecture= link_to lecture, "#{site_url}/#{ dumb_link unit.title }/#{ dumb_link chapter.title}/#{ dumb_link lecture}", { class: 'toc-link' }

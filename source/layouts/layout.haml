@@ -11,14 +11,16 @@
       try{Typekit.load({ async: false });}catch(e){}
 
     = stylesheet_link_tag "all"
-    = javascript_include_tag  "all"
+    = javascript_include_tag  "https://code.jquery.com/jquery-2.1.4.min.js", "all"
 
   %body
+    %button.toc-menu{ type: "button" } Toggle Table of Contents
     %header
     %main
-      .toc= partial 'toc' 
+      .toc.sliding-panel-content= partial 'toc' 
       .content
         .breadcrumbs= partial 'breadcrumbs'
         = yield
     %footer
       .breadcrumbs= partial 'breadcrumbs'
+    .toc-fade

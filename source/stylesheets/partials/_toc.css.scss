@@ -1,5 +1,52 @@
 .toc {
+  @include position(fixed, 0px auto 0px 0px);
+  @include transform(translateX(-94%));
+  @include transition(all 0.25s linear);
+  @include texture(180deg, lighten($ada-light-green, 10%), lighten($ada-light-green, 1%), 42, 0);
 
+  border-right: 2px solid darken($ada-light-green, 10%);
+  padding: 1rem;
+  z-index: 999999;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &.is-visible {
+    @include transition(all 0.4s ease-in-out);
+    @include transform(translateX(0));
+  }
+}
+
+.toc-fade {
+  @include position(fixed, 0px 0px 0px 0px);
+  @include transition;
+  background: white;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999998;
+
+  &.is-visible {
+    opacity: 0.75;
+    visibility: visible;
+  }
+}
+
+.toc-menu {
+  background: #fff url(image_path("hamburger.png")) no-repeat top left;
+  background-size: contain;
+  position: fixed;
+  top: 0.75rem;
+  left: 1.75rem;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  text-indent: -9999rem;
+  border: $base-border;
+  border-radius: 50%;
+
+  &:hover, &:active {
+    background-color: $ada-light-green;
+    border-color: $ada-light-green;
+  }
 }
 
 .toc-title {
@@ -7,7 +54,7 @@
 }
 
 .toc-unit {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   margin: 1rem 0 0;
 }
 
@@ -32,4 +79,8 @@
     display: table-cell;
     text-align: right;
   }
+}
+
+.toc-link {
+  color: #efefef;
 }
