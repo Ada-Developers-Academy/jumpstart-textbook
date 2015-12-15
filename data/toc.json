@@ -5,16 +5,47 @@
       {
         "title": "Introduction",
         "lectures": [
-
+          "How We Got to Now",
+          "In the Browser & On the Server",
+          "Objects & Core Types",
+          "Exercise: Practice Making Objects & Functions"
+        ]
+      },
+      {
+        "title": "Fun with Functions",
+        "lectures": [
+          "Expressions & Declarations",
+          "Higher Order Functions",
+          "Exercise: Array.prototype.sort"
+          "Closures",
+          "Exercise: Make an Accumulator"
+          "Objects & Inheritance",
+          "Exercise: Turducken"
         ]
       },
       {
         "title": "npm & Node",
         "lectures": [
           "Installation",
+          "Using npm and the Node REPL",
           "Using `require` and `module`",
-          "Your First Webserver",
-          "Building Web Apps with Express"
+          "The Event Loop: The What and Why of Asynchronous Programming",
+          "Exercise: Your First Webserver"
+        ]
+      },
+      {
+        "title": "Building Web Apps with Node & Express",
+        "lectures": [
+          "Installing Express",
+          "Typical Structure of an Express Web Application",
+          "Incorporating SQL: An Exercise in Asynchronous Patience",
+          "Exercise: Port Sinatra to Express"
+        ]
+      },
+      {
+        "title": "Building & Deploying Node APIs",
+        "lectures": [
+          ""
         ]
       }
     ]
@@ -26,10 +57,10 @@
       {
         "title": "Introduction to Ruby",
         "lectures": [
-          "Ruby 101: Welcome to Ruby!",
-          "Ruby 102: Core Data Types",
-          "Ruby 103: Iterators & Blocks",
-          "Ruby 104: Flow Control & Conditionals"
+          "Welcome to Ruby!",
+          "Core Data Types",
+          "Iterators & Blocks",
+          "Flow Control & Conditionals"
         ]
       }
     ]
