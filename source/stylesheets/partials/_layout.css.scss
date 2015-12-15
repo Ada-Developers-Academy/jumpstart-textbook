@@ -3,11 +3,9 @@ main {
 }
 
 .toc {
-  @include span-columns(2);
-  position: fixed;
+  @include span-columns(3);
 }
 
 .content {
   @include span-columns(9);
-  @include shift(2);
 }

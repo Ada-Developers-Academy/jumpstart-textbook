@@ -1,0 +1,35 @@
+.toc {
+
+}
+
+.toc-title {
+  font-size: 1.5rem;
+}
+
+.toc-unit {
+  font-size: 1.3rem;
+  margin: 1rem 0 0;
+}
+
+.toc-chapter {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.toc-lectures {
+  display: table;
+  font-size: 0.8rem;
+  margin: 0 0 0.5rem;
+  counter-reset: lecture;
+}
+
+.toc-lecture {
+  counter-increment: lecture;
+  display: table-row;
+
+  &::before {
+    content: counter(lecture) ". ";
+    display: table-cell;
+    text-align: right;
+  }
+}

@@ -4,14 +4,22 @@
 @import "base/base";   /* Bitters needs to be imported before Neat */
 @import "neat";
 
+@import "partials/mixins";
 @import "partials/layout";
+@import "partials/toc";
+@import "partials/breadcrumbs";
 @import "partials/syntax";
+
+body { 
+  -webkit-font-smoothing: antialiased;
+  margin: 0; 
+}
 
 code {
   background: #eee;
 }
 
-.chapter {
+.lecture {
   h1 { font-size: 3.5rem; }
   h2 { font-size: 2.5rem; }
   h3 { font-size: 1.75rem; }
