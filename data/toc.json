@@ -16,9 +16,9 @@
         "lectures": [
           "Expressions & Declarations",
           "Higher Order Functions",
-          "Exercise: Array.prototype.sort"
+          "Exercise: Array.prototype.sort",
           "Closures",
-          "Exercise: Make an Accumulator"
+          "Exercise: Make an Accumulator",
           "Objects & Inheritance",
           "Exercise: Turducken"
         ]
@@ -44,9 +44,7 @@
       },
       {
         "title": "Building & Deploying Node APIs",
-        "lectures": [
-          ""
-        ]
+        "lectures": []
       }
     ]
   },
@@ -57,7 +55,7 @@
       {
         "title": "Introduction to Ruby",
         "lectures": [
-          "Welcome to Ruby!",
+          "Welcome to Ruby",
           "Core Data Types",
           "Iterators & Blocks",
           "Flow Control & Conditionals"

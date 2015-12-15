@@ -29,9 +29,16 @@ end
 # Proxy pages (https://middlemanapp.com/advanced/dynamic_pages/)
 data.toc.each do |unit|
   unit.chapters.each do |chapter|
-    proxy "/#{ dumb_link unit.title }/#{ dumb_link chapter }.html", "/chapter.html",
-    locals: { unit: unit.title, chapter: chapter, file: "#{root_path}/chapters/#{dumb_link(chapter)}.md" },
-    ignore: true
+    chapter.lectures.each do |lecture|
+      proxy "/#{ dumb_link unit.title }/#{ dumb_link chapter.title }/#{ dumb_link lecture }.html", "/lecture.html",
+      locals: { 
+        unit: unit.title,
+        chapter: chapter.title,
+        lecture: lecture,
+        file: "#{root_path}/units/#{dumb_link unit.title }/#{ dumb_link chapter.title }/#{dumb_link lecture}.md"
+      },
+      ignore: true
+    end
   end
 end
 
