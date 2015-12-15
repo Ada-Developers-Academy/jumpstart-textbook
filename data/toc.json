@@ -1,11 +1,37 @@
 [
   {
-    "title": "Ruby Fundamentals & Programming Concepts",
+    "title": "JavaScript",
     "chapters": [
-      "Ruby 101",
-      "Ruby 102",
-      "Ruby 103",
-      "Ruby 104"
+      {
+        "title": "Introduction",
+        "lectures": [
+
+        ]
+      },
+      {
+        "title": "npm & Node",
+        "lectures": [
+          "Installation",
+          "Using `require` and `module`",
+          "Your First Webserver",
+          "Building Web Apps with Express"
+        ]
+      }
+    ]
+  },
+
+  {
+    "title": "Fundamentals of Programming",
+    "chapters": [
+      {
+        "title": "Introduction to Ruby",
+        "lectures": [
+          "Ruby 101: Welcome to Ruby!",
+          "Ruby 102: Core Data Types",
+          "Ruby 103: Iterators & Blocks",
+          "Ruby 104: Flow Control & Conditionals"
+        ]
+      }
     ]
   }
 ]

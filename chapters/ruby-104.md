@@ -1,4 +1,4 @@
-# ￼Ruby 104
+# ￼Ruby 104: Flow Control & Conditionals
 
 ## Comparisons
 Equality comparisons can be used on all objects, including `Strings`, `Integers`, `Floats`, `Arrays`, `Hashes`, etc:

@@ -1,4 +1,4 @@
-# Welcome To Ruby!
+# Ruby 101: Welcome To Ruby!
 
 We're going to start working with Ruby! Ruby is a programming language and will be the foundation of most everything we learn for the next 3 months.
 

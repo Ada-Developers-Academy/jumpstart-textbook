@@ -1,4 +1,4 @@
-# Ruby 102
+# Ruby 102: Core Data Types
 
 ## More of the basics
 We're going to review some of the basic and most used Object types within Ruby.
