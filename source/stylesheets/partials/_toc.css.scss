@@ -1,11 +1,11 @@
 .toc {
   @include position(fixed, 0px auto 0px 0px);
-  @include transform(translateX(-94%));
+  @include transform(translateX(calc(-100% + 3rem)));
   @include transition(all 0.25s linear);
   @include texture(180deg, lighten($ada-light-green, 10%), lighten($ada-light-green, 1%), 42, 0);
 
   border-right: 2px solid darken($ada-light-green, 10%);
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   z-index: 999999;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -13,7 +13,11 @@
   &.is-visible {
     @include transition(all 0.4s ease-in-out);
     @include transform(translateX(0));
+
+    * { opacity: 1; }
   }
+
+  * { opacity: 0; }
 }
 
 .toc-fade {
@@ -31,21 +35,22 @@
 }
 
 .toc-menu {
-  background: #fff url(image_path("hamburger.png")) no-repeat top left;
+  background: url(image_path("hamburger.png")) no-repeat top left;
   background-size: contain;
-  position: fixed;
-  top: 0.75rem;
-  left: 1.75rem;
-  width: 3rem;
-  height: 3rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.4rem;
+  width: 2rem;
+  height: 2rem;
   padding: 0;
   text-indent: -9999rem;
-  border: $base-border;
   border-radius: 50%;
+  opacity: 1;
+  z-index: 9999;
 
-  &:hover, &:active {
-    background-color: $ada-light-green;
-    border-color: $ada-light-green;
+  &:hover, &:active, &:focus {
+    background-color: $ada-yellow;
+    border-color: $ada-yellow;
   }
 }
 
@@ -54,12 +59,12 @@
 }
 
 .toc-unit {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin: 1rem 0 0;
 }
 
 .toc-chapter {
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin: 0;
 }
 
@@ -78,9 +83,10 @@
     content: counter(lecture) ". ";
     display: table-cell;
     text-align: right;
+    padding: 0 0.25rem 0 0;
   }
 }
 
 .toc-link {
-  color: #efefef;
+  color: rgba(235, 235, 235, 1);
 }

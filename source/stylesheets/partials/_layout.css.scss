@@ -3,7 +3,7 @@ main {
 }
 
 .toc {
-  @include span-columns(3);
+  max-width: 20rem;
 }
 
 .content {

@@ -1,9 +1,9 @@
-%h1.toc-title Table of Contents
-%h2= link_to "Home", "#{site_url}/"
+%button.toc-menu{ type: "button" } Toggle Table of Contents
+%h2.toc-title Table of Contents
 - data.toc.each do |unit|
-  %h2.toc-unit= unit.title
+  %h3.toc-unit= unit.title
   - unit.chapters.each do |chapter|
-    %h3.toc-chapter= chapter.title
+    %h4.toc-chapter= chapter.title
     %ol.toc-lectures
       - chapter.lectures.each do |lecture|
         %li.toc-lecture= link_to lecture, "#{site_url}/#{ dumb_link unit.title }/#{ dumb_link chapter.title}/#{ dumb_link lecture}", { class: 'toc-link' }
