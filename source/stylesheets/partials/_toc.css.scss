@@ -7,7 +7,7 @@
   border-right: 2px solid darken($ada-light-green, 10%);
   padding: 0.5rem 1rem;
   z-index: 999999;
-  overflow-y: auto;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
 
   &.is-visible {
@@ -54,6 +54,11 @@
   }
 }
 
+.toc-content {
+  overflow-y: scroll;
+  height: 99%;
+}
+
 .toc-title {
   font-size: 1.5rem;
 }
@@ -71,7 +76,7 @@
 .toc-lectures {
   display: table;
   font-size: 0.8rem;
-  margin: 0 0 0.5rem;
+  margin: 0 0 1.25rem;
   counter-reset: lecture;
 }
 

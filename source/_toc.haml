@@ -1,9 +1,10 @@
 %button.toc-menu{ type: "button" } Toggle Table of Contents
 %h2.toc-title Table of Contents
-- data.toc.each do |unit|
-  %h3.toc-unit= unit.title
-  - unit.chapters.each do |chapter|
-    %h4.toc-chapter= chapter.title
-    %ol.toc-lectures
-      - chapter.lectures.each do |lecture|
-        %li.toc-lecture= link_to lecture, "#{site_url}/#{ dumb_link unit.title }/#{ dumb_link chapter.title}/#{ dumb_link lecture}", { class: 'toc-link' }
+.toc-content
+  - data.toc.each do |unit|
+    %h3.toc-unit= unit.title
+    - unit.chapters.each do |chapter|
+      %h4.toc-chapter= chapter.title
+      %ol.toc-lectures
+        - chapter.lectures.each do |lecture|
+          %li.toc-lecture= link_to lecture, "#{site_url}/#{ dumb_link unit.title }/#{ dumb_link chapter.title}/#{ dumb_link lecture}", { class: 'toc-link' }
