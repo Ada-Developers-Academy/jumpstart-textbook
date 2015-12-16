@@ -14,8 +14,8 @@
     = javascript_include_tag  "https://code.jquery.com/jquery-2.1.4.min.js", "all"
 
   %body
-    = partial :header
     %main
+      = partial :header
       .toc.sliding-panel-content= partial 'toc' 
       .content
         .breadcrumbs= partial 'breadcrumbs'
