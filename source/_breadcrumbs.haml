@@ -1,3 +1,5 @@
-= link_to @unit, '#'
-= link_to @chapter, '#'
-= link_to @lecture, '#' if @lecture
+- if @unit || @chapter || @lecture
+  .breadcrumbs
+    = link_to @unit, '#'
+    = link_to @chapter, '#'
+    = link_to @lecture, '#' if @lecture

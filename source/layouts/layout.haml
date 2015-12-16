@@ -18,8 +18,8 @@
       = partial :header
       .toc.sliding-panel-content= partial 'toc' 
       .content
-        .breadcrumbs= partial 'breadcrumbs'
+        = partial 'breadcrumbs'
         = yield
     %footer
-      .breadcrumbs= partial 'breadcrumbs'
+      = partial 'breadcrumbs'
     .toc-fade
