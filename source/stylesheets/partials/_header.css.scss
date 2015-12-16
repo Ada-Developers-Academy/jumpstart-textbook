@@ -1,0 +1,105 @@
+.navigation {
+  $horizontal-bar-mode: $large-screen;
+  $navigation-height: 3rem;
+
+  min-height: $navigation-height;
+  padding: 0.5rem 0;
+  z-index: 999;
+
+  .navigation-wrapper {
+    @include clearfix;
+    position: relative;
+    z-index: 9999;
+  }
+
+  .logo {
+    background: url(image_path("logo.svg")) no-repeat center left;
+    background-size: contain;
+    float: left;
+    max-height: $navigation-height;
+    line-height: $navigation-height;
+    margin-right: $navigation-height;
+    width: 10rem;
+
+    text-indent: -9999em;
+  }
+
+  // Mobile view
+
+  .navigation-menu-button {
+    border: $base-border;
+    display: block;
+    float: right;
+    line-height: $navigation-height;
+    margin: 0;
+    padding: 0 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+
+    @include media ($horizontal-bar-mode) {
+      display: none;
+    }
+  }
+
+  // Nav menu
+
+  nav {
+    float: none;
+    min-height: $navigation-height;
+    z-index: 9999999;
+    margin: 0.6rem 0 0;
+
+    @include media ($horizontal-bar-mode) {
+      float: left;
+    }
+  }
+
+  .navigation-menu {
+    clear: both;
+    display: none;
+    margin: 0 auto;
+    overflow: visible;
+    padding: 0;
+    width: 100%;
+    z-index: 9999;
+
+    &.show {
+      display: block;
+    }
+
+    @include media ($horizontal-bar-mode) {
+      display: inline;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  // The nav items
+
+  .nav-link {
+    display: block;
+    line-height: $navigation-height;
+    overflow: hidden;
+    margin-right: 1rem;
+    text-align: right;
+    width: 100%;
+    z-index: 9999;
+
+    @include media ($horizontal-bar-mode) {
+      background: transparent;
+      display: inline;
+      line-height: 1;
+      text-decoration: none;
+      width: auto;
+    }
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      font-size: 0.8rem;
+
+      &:hover,&:active { border-bottom: $base-border; }
+    }
+  }
+}
