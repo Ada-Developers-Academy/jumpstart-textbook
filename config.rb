@@ -1,11 +1,12 @@
-# Methods defined in the helpers block are available in templates
-def dumb_link(string) #calling this dumb link because it handles 0 edge cases
-  string.downcase.gsub(/\W+/, '-')
-end
+require_relative './dumb_link'
 
+# Methods defined in the helpers block are available in templates
 helpers do
-  def dumb_link(string) # I'll shave this yak later
-    string.downcase.gsub(/\W+/, '-')
+  def breadcrumb_link(unit, chapter = nil, lecture = nil, opts = {})
+    text = lecture || chapter || unit
+    path = [site_url, unit, chapter, lecture].compact.map(&:dumb_link).join('/')
+
+    link_to text, path, opts
   end
 end
 
@@ -30,12 +31,12 @@ end
 data.toc.each do |unit|
   unit.chapters.each do |chapter|
     chapter.lectures.each do |lecture|
-      proxy "/#{ dumb_link unit.title }/#{ dumb_link chapter.title }/#{ dumb_link lecture }.html", "/lecture.html",
+      proxy "/#{  unit.title.dumb_link }/#{  chapter.title.dumb_link }/#{  lecture.dumb_link }.html", "/lecture.html",
       locals: { 
         unit: unit.title,
         chapter: chapter.title,
         lecture: lecture,
-        file: "#{root_path}/units/#{dumb_link unit.title }/#{ dumb_link chapter.title }/#{dumb_link lecture}.md"
+        file: "#{root_path}/units/#{ unit.title.dumb_link }/#{  chapter.title.dumb_link }/#{ lecture.dumb_link }.md"
       },
       ignore: true
     end

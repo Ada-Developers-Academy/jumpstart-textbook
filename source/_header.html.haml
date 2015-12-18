@@ -4,7 +4,7 @@
     %a#js-mobile-menu.navigation-menu-button{ href: "javascript:void(0)" } Links
     %nav{ role: "navigation" }
       %ul#js-navigation-menu.navigation-menu.show
-        %li.nav-link= link_to "Home", "#{site_url}/"
-        %li.nav-link= link_to "About", "/about"
+        %li.nav-link= link_to "Home", "#{ site_url }/"
+        %li.nav-link= link_to "About", "#{ site_url }/about"
         %li.nav-link= link_to "Github", "//github.com/Ada-Developers-Academy/"
-        %li.nav-link= link_to "Contact", "/contact"
+        %li.nav-link= link_to "Contact", "#{ site_url }/contact"
