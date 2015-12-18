@@ -1,6 +1,6 @@
 .toc {
   @include position(fixed, 0px auto 0px 0px);
-  @include transform(translateX(calc(-100% + 3rem)));
+  @include transform(translateX(calc(-100% + 4rem)));
   @include transition(all 0.25s linear);
   @include texture(180deg, lighten($ada-light-green, 10%), lighten($ada-light-green, 1%), 42, 0);
 
@@ -38,8 +38,8 @@
   background: url(image_path("hamburger.png")) no-repeat top left;
   background-size: contain;
   position: absolute;
-  top: 0.5rem;
-  right: 0.4rem;
+  top: 1rem;
+  right: 1rem;
   width: 2rem;
   height: 2rem;
   padding: 0;
