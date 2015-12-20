@@ -1,46 +1,13 @@
-require_relative './dumb_link'
+# bring the link building module into scope
+require_relative './pathable'
+class Middleman::Application
+  include Pathable
+end
 
 # Methods defined in the helpers block are available in templates
 helpers do
-  def breadcrumb_link(unit, chapter = nil, lecture = nil, opts = {})
-    text = lecture || chapter || unit
-    path = [site_url, unit, chapter, lecture].compact.map(&:dumb_link).join('/')
-
-    link_to text, path, opts
-  end
-end
-
-###
-# Page options, layouts, aliases and proxies
-###
-
-# Per-page layout changes:
-#
-# With no layout
-# page "/path/to/file.html", :layout => false
-#
-# With alternative layout
-# page "/path/to/file.html", :layout => :otherlayout
-#
-# A path which all have the same layout
-# with_layout :admin do
-#   page "/admin/*"
-# end
-
-# Proxy pages (https://middlemanapp.com/advanced/dynamic_pages/)
-data.toc.each do |unit|
-  unit.chapters.each do |chapter|
-    chapter.lectures.each do |lecture|
-      proxy "/#{  unit.title.dumb_link }/#{  chapter.title.dumb_link }/#{  lecture.dumb_link }.html", "/lecture.html",
-      locals: { 
-        unit: unit.title,
-        chapter: chapter.title,
-        lecture: lecture,
-        file: "#{root_path}/units/#{ unit.title.dumb_link }/#{  chapter.title.dumb_link }/#{ lecture.dumb_link }.md"
-      },
-      ignore: true
-    end
-  end
+  # helpers need crumb/path building too
+  include Pathable
 end
 
 set :css_dir, 'stylesheets'
@@ -50,6 +17,22 @@ set :relative_links, true
 set :haml, { ugly: true, format: :html5 }
 set :markdown_engine, :kramdown
 set :site_url, ""
+
+# Proxy pages (https://middlemanapp.com/advanced/dynamic_pages/)
+data.toc.each do |unit|
+  unit.chapters.each do |chapter|
+    chapter.lectures.each do |lecture|
+      proxy proxy_path(unit.title, chapter.title, lecture), "/lecture.html",
+      locals: { 
+        unit: unit.title,
+        chapter: chapter.title,
+        lecture: lecture,
+        file: markdown_path(unit.title, chapter.title, lecture)
+      },
+      ignore: true
+    end
+  end
+end
 
 # all environments
 activate :directory_indexes
