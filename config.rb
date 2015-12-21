@@ -1,5 +1,5 @@
 # bring the link building module into scope
-require_relative './pathable'
+require_relative './lib/pathable'
 class Middleman::Application
   include Pathable
 end

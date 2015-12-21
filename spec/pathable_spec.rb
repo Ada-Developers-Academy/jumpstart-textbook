@@ -1,4 +1,4 @@
-require_relative "../pathable"
+require_relative "../lib/pathable"
 include Pathable
 
 describe Pathable do
