@@ -22,7 +22,7 @@ module Pathable
   end
 
   def builder(prefix, *chunks)
-    ([prefix] << chunks.compact.map { |chunk| dumb_link chunk }).join ('/')
+    File.join([prefix] << chunks.compact.map { |chunk| dumb_link chunk })
   end
 
   def link_to(*args)
