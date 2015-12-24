@@ -4,7 +4,7 @@ require 'fileutils'
 require_relative '../pathable'
 
 desc "Touch into existance all markdown files necessary to support the defined ToC"
-task :lectures => :app_instance do
+task :toc => :app_instance do
   include Pathable
 
   directories = []
