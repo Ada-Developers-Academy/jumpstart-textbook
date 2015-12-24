@@ -14,6 +14,9 @@ task :lectures => :app_instance do
   # it is gross to nest loops like this; I am so sorry
   toc = JSON::parse File.read(File.join @app.root_path, "data", "toc.json")
   toc.each do |unit|
+    # add to the markdowns array a file reference for the unit
+    markdowns << markdown_path(@app.root_path, unit['title'])
+
     # build an array of all directories needed for the chapters in the unit
     unit['chapters'].each do |chapter|
       path = [@app.root_path, unit['title'], chapter['title']]
