@@ -1,5 +1,5 @@
 - if @unit || @chapter || @lecture
   .breadcrumbs
-    = breadcrumb_link @unit
-    = breadcrumb_link(@unit, @chapter) if @chapter
-    = breadcrumb_link(@unit, @chapter, @lecture) if @lecture
+    = link_to(*(breadcrumb_link site_url, @unit))
+    = link_to(*(breadcrumb_link(site_url, @unit, @chapter))) if @chapter
+    = link_to(*(breadcrumb_link(site_url, @unit, @chapter, @lecture))) if @lecture

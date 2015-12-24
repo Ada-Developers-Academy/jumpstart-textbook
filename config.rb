@@ -1,3 +1,12 @@
+# site structure variables
+set :css_dir, 'stylesheets'
+set :js_dir, 'javascripts'
+set :images_dir, 'images'
+set :relative_links, true
+set :haml, { ugly: true, format: :html5 }
+set :markdown_engine, :kramdown
+set :site_url, ""
+
 # bring the link building module into scope
 require_relative './lib/pathable'
 class Middleman::Application
@@ -10,24 +19,16 @@ helpers do
   include Pathable
 end
 
-set :css_dir, 'stylesheets'
-set :js_dir, 'javascripts'
-set :images_dir, 'images'
-set :relative_links, true
-set :haml, { ugly: true, format: :html5 }
-set :markdown_engine, :kramdown
-set :site_url, ""
-
 # Proxy pages (https://middlemanapp.com/advanced/dynamic_pages/)
 data.toc.each do |unit|
   unit.chapters.each do |chapter|
     chapter.lectures.each do |lecture|
-      proxy proxy_path(unit.title, chapter.title, lecture), "/lecture.html",
+      proxy proxy_path(site_url, unit.title, chapter.title, lecture), "/lecture.html",
       locals: { 
         unit: unit.title,
         chapter: chapter.title,
         lecture: lecture,
-        file: markdown_path(unit.title, chapter.title, lecture)
+        file: markdown_path(root_path, unit.title, chapter.title, lecture)
       },
       ignore: true
     end

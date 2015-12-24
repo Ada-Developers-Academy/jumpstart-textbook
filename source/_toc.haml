@@ -8,4 +8,5 @@
       %button{ class: "toc-chapter #{ current_class }" }= chapter.title
       %ol{ class: "#{ current_class } toc-lectures" }
         - chapter.lectures.each do |lecture|
-          %li.toc-lecture= breadcrumb_link unit.title, chapter.title, lecture, { class: 'toc-link' }
+          - text, path = breadcrumb_link site_url, unit.title, chapter.title, lecture
+          %li.toc-lecture= link_to text, path, { class: 'toc-link' }
