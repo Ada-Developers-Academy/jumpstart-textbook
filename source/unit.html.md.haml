@@ -1,0 +1,12 @@
+- # this instance variable informs the breadcrumb partials
+- # weird, right? Totes works, though
+- @unit = unit.title
+
+-# We're reading the file on every render on purpose.
+-# So we can dynamically reload changes to the markdown file
+-# makes for easier editing.
+.unit= Kramdown::Document.new(File.read(file)).to_html
+
+%ol.chapters
+  - unit.chapters.each do |chapter|
+    %li= link_to(*(breadcrumb_link(site_url, unit.title, chapter.title)))
