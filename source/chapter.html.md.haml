@@ -6,3 +6,7 @@
 -# So we can dynamically reload changes to the markdown file
 -# makes for easier editing.
 .chapter= Kramdown::Document.new(File.read(file)).to_html
+
+%ol.lectures
+  - lectures.each do |lecture|
+    %li= link_to(*(breadcrumb_link(site_url, unit, chapter, lecture)))

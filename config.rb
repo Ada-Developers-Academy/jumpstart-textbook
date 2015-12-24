@@ -21,16 +21,29 @@ end
 
 # Proxy pages (https://middlemanapp.com/advanced/dynamic_pages/)
 data.toc.each do |unit|
+  # make a proxy for each unit
+  
   unit.chapters.each do |chapter|
-    chapter.lectures.each do |lecture|
-      proxy proxy_path(site_url, unit.title, chapter.title, lecture), "/lecture.html",
-      locals: { 
+    # make a proxy for each chapter in the unit
+    proxy proxy_path(site_url, unit.title, chapter.title), "/chapter.html",
+      locals: {
         unit: unit.title,
         chapter: chapter.title,
-        lecture: lecture,
-        file: markdown_path(root_path, unit.title, chapter.title, lecture)
+        lectures: chapter.lectures,
+        file: markdown_path(root_path, unit.title, chapter.title)
       },
       ignore: true
+      
+    # make a proxy for every lecture in the chapter
+    chapter.lectures.each do |lecture|
+      proxy proxy_path(site_url, unit.title, chapter.title, lecture), "/lecture.html",
+        locals: { 
+          unit: unit.title,
+          chapter: chapter.title,
+          lecture: lecture,
+          file: markdown_path(root_path, unit.title, chapter.title, lecture)
+        },
+        ignore: true
     end
   end
 end
