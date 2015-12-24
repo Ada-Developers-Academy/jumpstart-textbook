@@ -1,0 +1,26 @@
+footer {
+  $one-row-mode: $large-screen;
+  @include span-columns(10);
+  @include shift(1);
+
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+
+  .copyright {
+    display: inline-block;
+    font-size: 0.75rem;
+    line-height: 1.5rem;
+    float: none;
+    text-align: right;
+
+    @include media ($one-row-mode) {
+      float: right;
+      text-align: left;
+    }
+
+  }
+
+  .navigation-menu {
+    font-size: 0.8rem;
+  }
+}
