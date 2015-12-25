@@ -22,7 +22,7 @@ Please be aware that every deploy force-pushes over the existing deploy. __The g
 
 ## License
 
-This project is released under the MIT License. Please see the accompanying LICENSE file for more details.
+This project is released under the MIT License. Please see the accompanying LICENSE.md file for more details.
 
 [Ada Developers Academy](http://adadevelopersacademy.org)'s Curriculum is licensed [Creative Commons Attribution-ShareAlike 4.0](http://creativecommons.org/licenses/by-sa/4.0/).
 ![Creative Commons License](http://i.creativecommons.org/l/by-sa/4.0/80x15.png)
