@@ -8,7 +8,7 @@
 <script>
   try{Typekit.load({ async: false });}catch(e){}
 </script>
-<link href="../../../stylesheets/all-8419ce92.css" rel="stylesheet" />
+<link href="../../../stylesheets/all-c45e147a.css" rel="stylesheet" />
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script><script src="../../../javascripts/all-780487bd.js"></script>
 </head>
 <body>
@@ -118,7 +118,202 @@
 <a href="/jumpstart-textbook/jumpstart-lessons/the-terminal/the-command-line">The Command Line</a>
 </div>
 
-<div class="lecture">
+<div class="lecture"><h1 id="notes-the-command-line">Notes: The Command Line</h1>
+
+<p>As a programmer, you’ll need to become fluent with your computer’s <strong>terminal</strong> (also called <strong>command line</strong>).</p>
+
+<p>Most of us are used to GUI-based (Graphical User Interface) operating systems like Windows or OS X, but a command line approach is much more effective for many tasks in programming. For example, Terminal will be the place where you’ll navigate through and modify your files and folders (also called directories).</p>
+
+<h2 id="how-to-get-started">How to get started</h2>
+<ul>
+  <li>If you are running OS X, find the program ‘Terminal’ on your computer and open it</li>
+  <li>If you aren’t, or would just like to start in a more contained environment where you can test things out without affecting your computer, open http://bellard.org/jslinux/ in your web browser. This is a <a href="https://en.wikipedia.org/wiki/Virtual_machine">virtual machine</a> that runs in a web browser, simulating a computer, that you can restart at any time to return to its original state (by refreshing the browser)</li>
+</ul>
+
+<h2 id="terminal-terminology">Terminal Terminology</h2>
+<ul>
+  <li><strong>Console</strong> - the system as a whole</li>
+  <li><strong>Command Line</strong> - the actual line in the console where you type a command</li>
+  <li><strong>Prompt</strong> - This is the beginning of the command line. It usually provides some contextual information like who you are, where you are and other useful info. It typically ends in a $ (this is represented in these examples). After the prompt is where you will be typing commands.</li>
+  <li><strong>Terminal</strong> - The program we use to interact with the console.</li>
+</ul>
+
+<h2 id="how-the-command-line-works">How the command line works</h2>
+<p>The terminal operates in a repeating sequence of steps:</p>
+
+<ol>
+  <li>Displays a single line of text known as a <strong>prompt</strong></li>
+  <li>Accepts a single line of text known as a <strong>command</strong></li>
+  <li>When commands are entered, <strong>executes</strong> (or <strong>runs</strong>) them</li>
+  <li>Displays the <strong>output</strong> (or <strong>result</strong>) of executing commands</li>
+  <li>Finally, repeats with step 1</li>
+</ol>
+
+<h2 id="what-is-a-command">What is a command?</h2>
+<ul>
+  <li>Commands are actions that we wish to take using our computer</li>
+  <li>Examples: Creating a new directory or file, moving a file, deleting a file</li>
+  <li>Commands have a few parts:
+    <ul>
+      <li><strong>Command name</strong> - Specifies the particular command we wish to use</li>
+      <li><strong>Arguments</strong> - Additional information required for the command to properly execute</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="running-a-command">Running a Command</h2>
+<p>Commands almost always have 3 parts.
+<code>
+[command] [options] [arguments]
+</code></p>
+
+<p>You could think of it as
+<code>
+verb adverb noun
+</code></p>
+
+<h2 id="example-commands">Example commands</h2>
+<p>In UNIX commands are all tiny little programs. They tend to do one small job or task, with a variety of options. We’ll be writing our own later on in this program!</p>
+
+<h3 id="list-files-and-folders--ls-">List Files and Folders ( <code>ls</code> )</h3>
+<p>Let’s look at one command
+<code>
+$ ls -a .
+</code></p>
+
+<h3 id="terminal-manual--man-">Terminal Manual ( <code>man</code> )</h3>
+<p>In your Terminal, type</p>
+
+<p><code>
+$ man ls
+</code>
+<code>man</code> is short for manual.</p>
+
+<p>*using <code>man</code>, will enter a reading mode, a couple things to note about this mode:
+- Normal commands will no longer work.
+- <code>q</code> (for quit) exits this mode
+- Up and down keys scroll.
+- Space bar is page down</p>
+
+<h3 id="navigation--pwd-cd">Navigation ( <code>pwd</code>, <code>cd</code>)</h3>
+<p>Getting around the directories of our computer is a snap!</p>
+
+<p><code>
+$ pwd
+/Users/Bookis/work/ada
+</code>
+<code>pwd</code> returns the present working directory. Use this command to find in which directory you are currently “in”.</p>
+
+<p><code>
+$ cd &lt;some path&gt;
+</code>
+<code>cd</code> is change directory. It’s followed by some directory, if I were in <code>/Users/Bookis/work</code>:</p>
+
+<p><code>
+$ pwd
+/Users/Bookis/work
+$ cd ada
+$ pwd
+/Users/Bookis/work/ada
+</code></p>
+
+<h4 id="special-paths">Special Paths</h4>
+
+<p><code>
+$ cd ~
+</code>
+“~” represents your Home directory, for me this is “/Users/Bookis”. As a shortcut, you can also just type <code>cd</code> with no directory at all.
+<code>
+$ cd .
+</code>
+A single “.” represents the current directory, so cd . goes to where you already are.
+<code>
+$ cd ..
+</code>
+“..” represents the parent directory, “..” from /Users/Bookis/work/ada is /Users/Bookis/work
+<code>
+$ cd ../../
+</code>
+Directories can be chained together, this goes up two directories.
+<code>
+$ cd -
+</code>
+A single “-“ means to go back to the prior directory that you were in. This is different from the parent directory and more like the back button except it only keeps one directory of history. Running <code>cd -</code> again will toggle back and forth between the same two directories. This can be useful if you have two directories that you need to switch back and forth between.</p>
+
+<h2 id="basic-commands">Basic Commands</h2>
+<p>Let’s take a few minutes and use <code>man</code> to explore these commands.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>command</th>
+      <th>what it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>man</code></td>
+      <td>Manual: Open the manual for a specific command (‘q’ to quit out of manual mode)</td>
+    </tr>
+    <tr>
+      <td><code>pwd</code></td>
+      <td>Present Working Directory: Display the current location as a “path” (sequence of child directories separated by <code>/</code>) starting with the root directory <code>/</code></td>
+    </tr>
+    <tr>
+      <td><code>ls</code></td>
+      <td>List Directory: Display all of the child files and directories for the current location</td>
+    </tr>
+    <tr>
+      <td><code>cd</code></td>
+      <td>Change Directory: Move to a different location, all further commands execute at that location</td>
+    </tr>
+    <tr>
+      <td><code>mkdir</code></td>
+      <td>Make Directory: Create a new directory with the name specified</td>
+    </tr>
+    <tr>
+      <td><code>touch</code></td>
+      <td>Create new file or update timestamp of existing file: If the file argument does not exist, create it as an empty file. If the file argument does exist, ‘touch’ it’s timestamp (last modified date/time) to be the current date/time.</td>
+    </tr>
+    <tr>
+      <td><code>cp</code></td>
+      <td>Copy: Copy argument1 to argument2</td>
+    </tr>
+    <tr>
+      <td><code>mv</code></td>
+      <td>Move: Move argument1 to argument2 (removes argument1). This is like renaming.</td>
+    </tr>
+    <tr>
+      <td><code>rm</code></td>
+      <td>Remove: Delete the file or folder passed to <code>rm</code></td>
+    </tr>
+    <tr>
+      <td><code>less</code></td>
+      <td>Print the contents of the argument to the screen with the ability to scroll through (also <a href="https://en.wikipedia.org/wiki/Less_(Unix)"><code>more</code>; less is more, more or less</a>)</td>
+    </tr>
+    <tr>
+      <td><code>cat</code></td>
+      <td>Print the contents of the argument to the screen (no scrolling)</td>
+    </tr>
+    <tr>
+      <td><code>whoami</code></td>
+      <td>Tells you what user you are currently working as</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="what-did-we-learn">What Did We Learn?</h2>
+
+<ul>
+  <li>Show folders and files in your current directory</li>
+  <li>Show your current location</li>
+  <li>Change directories</li>
+  <li>Open files</li>
+  <li>Create new files and directories</li>
+  <li>Copy files to different directories</li>
+  <li>Move files to different directories</li>
+  <li>Remove files and directories</li>
+</ul>
 </div>
 
 </div>

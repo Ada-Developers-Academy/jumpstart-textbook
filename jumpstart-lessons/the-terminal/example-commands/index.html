@@ -8,7 +8,7 @@
 <script>
   try{Typekit.load({ async: false });}catch(e){}
 </script>
-<link href="../../../stylesheets/all-8419ce92.css" rel="stylesheet" />
+<link href="../../../stylesheets/all-c45e147a.css" rel="stylesheet" />
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script><script src="../../../javascripts/all-780487bd.js"></script>
 </head>
 <body>
@@ -118,7 +118,285 @@
 <a href="/jumpstart-textbook/jumpstart-lessons/the-terminal/example-commands">Example Commands</a>
 </div>
 
-<div class="lecture">
+<div class="lecture"><h1 id="notes-example-commands">Notes: Example Commands</h1>
+
+<h2 id="example-1-making-and-navigating-directories">Example 1: Making and navigating directories</h2>
+
+<p>The following series of commands:</p>
+
+<div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></td><td class="code"><pre><span class="gp">$ </span>mkdir market
+<span class="gp">$ </span><span class="nb">cd </span>market
+<span class="gp">$ </span>mkdir fruits
+<span class="gp">$ </span>mkdir vegetables
+<span class="gp">$ </span>mkdir sweets
+<span class="gp">$ </span><span class="nb">cd </span>sweets
+<span class="gp">$ </span>mkdir chocolate
+<span class="gp">$ </span><span class="nb">cd</span> ..
+<span class="gp">$ </span><span class="nb">cd </span>fruits
+<span class="gp">$ </span>mkdir apples
+<span class="gp">$ </span>mkdir lychee
+<span class="gp">$ </span><span class="nb">cd</span> ..
+<span class="gp">$ </span><span class="nb">cd </span>vegetables
+<span class="gp">$ </span>mkdir carrots
+<span class="gp">$ </span>mkdir celery
+<span class="gp">$ </span><span class="nb">cd</span> ..
+<span class="gp">$ </span><span class="nb">cd </span>sweets
+<span class="gp">$ </span>mkdir caramels
+<span class="gp">$ </span><span class="nb">pwd</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>Creates the following folder structure</p>
+
+<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></td><td class="code"><pre>market/
+market/fruits/
+market/fruits/apples/
+market/fruits/lychee/
+market/vegetables/
+market/vegetables/carrots/
+market/vegetables/celery/
+market/sweets/
+market/sweets/caramels/
+market/sweets/chocolate/
+</pre></td></tr></tbody></table>
+</div>
+
+<p><code>pwd</code> at the end of the commands, would result in <code>market/sweets/</code></p>
+
+<h2 id="example-2-creating-and-printing-files">Example 2: Creating and printing files</h2>
+
+<p>The following series of commands:</p>
+
+<div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></td><td class="code"><pre><span class="gp">$ </span>mkdir lessons
+<span class="gp">$ </span><span class="nb">cd </span>lessons
+<span class="gp">$ </span>mkdir 00-learning-style
+<span class="gp">$ </span>mkdir 00-learning-style/assignments
+<span class="gp">$ </span>mkdir 00-learning-style/notes
+<span class="gp">$ </span>touch 00-learning-style/assignments/things-to-try.md
+<span class="gp">$ </span><span class="nb">cd </span>00-learning-style/notes
+<span class="gp">$ </span>touch learning-styles.md
+<span class="gp">$ </span>cat learning-styles.md
+<span class="gp">$ </span><span class="nb">cd</span> ../..
+</pre></td></tr></tbody></table>
+</div>
+
+<p>Note that here we used some <em>directory chaining</em> (<code>00-learning-styles/assignments</code>, etc) so that we didn’t have to change directories before creating new files or folders.</p>
+
+<p>Creates the following file/folder structure:</p>
+
+<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre>lessons/
+lessons/assignments/
+lessons/assignments/things-to-try.md
+lessons/notes/
+lessons/notes/learning-styles.md
+</pre></td></tr></tbody></table>
+</div>
+
+<p><strong>Note</strong>: that <code>things-to-try.md</code> and <code>learning-styles.md</code> would be empty since we can assume that this is the initial creation of this directory structure and files. <code>cat learning-styles.md</code> would therefore result in nothing printed to the screen, unless we first open that file, edit, and save it.</p>
+
+<h2 id="example-3-removing-moving-renaming-and-copying-files">Example 3: Removing, moving (renaming), and copying files</h2>
+
+<p>The following series of commands:</p>
+
+<div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="gp">$ </span>mkdir songs
+<span class="gp">$ </span>touch songs/song1.md
+<span class="gp">$ </span>touch songs/song2.md
+<span class="gp">$ </span>touch songs/song10.md
+</pre></td></tr></tbody></table>
+</div>
+
+<p>Creates the following file/folder structure:</p>
+
+<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre>songs/
+songs/song1.md
+songs/song2.md
+songs/song10.md
+</pre></td></tr></tbody></table>
+</div>
+
+<p>If we did <code>$ rm songs/*1*</code>, then we would have:</p>
+
+<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre>songs/
+songs/song2.md
+</pre></td></tr></tbody></table>
+</div>
+
+<p>If then we did:</p>
+
+<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre>$ cp song2.md song3.md
+$ touch song4.md
+</pre></td></tr></tbody></table>
+</div>
+
+<p>we would then have:</p>
+
+<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre>songs/
+songs/song2.md
+songs/song3.md
+songs/song4.md
+</pre></td></tr></tbody></table>
+</div>
+
+<p>In this case, <code>song4.md</code> would be an empty file that we just created, whereas <code>song3.md</code> would be a copy of <code>song2.md</code>, at whatever state it was in when the copy command was made (in this case, probably also empty).</p>
+
+<p>If then we did <code>$ mv song4.md song1.md</code>, we would then have:</p>
+
+<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre>songs/
+songs/song1.md
+songs/song2.md
+songs/song3.md
+</pre></td></tr></tbody></table>
+</div>
+
+<h2 id="example-4-listing-removing-moving-renaming-and-copying--directories">Example 4: Listing, removing, moving (renaming), and copying  directories</h2>
+
+<p>The following series of commands:</p>
+
+<div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td class="code"><pre><span class="gp">$ </span>mkdir card-games
+<span class="gp">$ </span><span class="nb">cd </span>card-games
+<span class="gp">$ </span>mkdir war
+<span class="gp">$ </span>touch war/rules.md
+<span class="gp">$ </span>cp -r war hearts
+<span class="gp">$ </span>cp -r war blackjack
+<span class="gp">$ </span><span class="nb">pwd</span>
+<span class="gp">$ </span>ls
+</pre></td></tr></tbody></table>
+</div>
+
+<p><code>pwd</code> here would result in <code>card-games\</code> because we switched into this folder, but then didn’t move out of it before, after, or during making the other folders or files.</p>
+
+<p><code>ls</code> here would result in <code>blackjack hearts war</code> because we are inside <code>card-games\</code></p>
+
+<p>Note that we utilized the flag <code>-r</code> here. This means ‘recursive’, which means the first directory argument (<code>war</code>) is copied in its entirety to the second argument (<code>hearts</code>), including any folder/files inside of it. If you leave off the <code>-r</code> flag, then the directory will not be copied because <code>cp</code> alone only copies files, not folders.</p>
+
+<p>Creates the following file/folder structure:</p>
+
+<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre></td><td class="code"><pre>card-games/
+card-games/blackjack/
+card-games/blackjack/rules.md
+card-games/hearts/
+card-games/hearts/rules.md
+cards-games/war/
+cards-games/war/rules.md
+</pre></td></tr></tbody></table>
+</div>
+
+<p>If we wanted to then rename (move) all the rules.md files at once, we could do <code>$ mv */rules.md */game-rules.md</code>.</p>
+
+<p>Which would result in:</p>
+
+<div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td class="code"><pre><span class="gp">$ </span>ls -la
+card-games/
+card-games/blackjack/
+card-games/blackjack/game-rules.md
+card-games/hearts/
+card-games/hearts/game-rules.md
+cards-games/war/
+cards-games/war/game-rules.md
+</pre></td></tr></tbody></table>
+</div>
+
+<p><strong>Note</strong>: The <code>*</code> is a wildcard, which means anything can go in its place. In this case, that ‘anything’ is each of the directories.</p>
+
+<p>If we did the following:</p>
+
+<div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="gp">$ </span>rm hearts/game<span class="k">*</span>
+<span class="gp">$ </span>rm -r blackjack
+</pre></td></tr></tbody></table>
+</div>
+
+<p>We would then have:</p>
+
+<div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre><span class="gp">$ </span>ls -la
+card-games/
+card-games/hearts/
+cards-games/war/
+cards-games/war/game-rules.md
+</pre></td></tr></tbody></table>
+</div>
+
+<p>Note that we used the wildcard (<code>*</code>) here again to delete any files inside the <code>hearts</code> directory that began with ‘game’. In this case there was only one file that met this criteria, but if there had been more files with ‘game’ at their start, they would also have been removed. Relatedly, we can also use multiple wildcards in a command, like <code>rm *rules*</code>, which would remove any files with ‘rules’ in them: for example all of the following (had they exsisted): rules1.md, all-the-rules.txt, somerules.md, rules.doc, :</p>
+
+<p>Note that we also utilized the flag <code>-r</code> here. This means <em>recursive</em>, which means to delete the folder you reference as well as any folder/files inside of it. If you leave off the <code>-r</code> flag, then the non-empty directory will not be deleted.</p>
 </div>
 
 </div>
