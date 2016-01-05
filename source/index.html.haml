@@ -1,7 +1,5 @@
 ---
-title: Welcome to Middleman
+title: Ada Developers Academy Jumpstart
 ---
 
-.welcome
-  %h1 Middleman is Watching
-  %p.doc= link_to "Read Online Documentation", "http://middlemanapp.com/"
+.lecture= Kramdown::Document.new(File.read(markdown_path(root_path,"index"))).to_html

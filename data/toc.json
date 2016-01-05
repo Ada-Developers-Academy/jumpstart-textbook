@@ -1,64 +1,117 @@
 [
   {
-    "title": "JavaScript",
+    "title": "Jumpstart Lessons",
     "chapters": [
       {
-        "title": "Introduction",
+        "title": "Learning Style",
         "lectures": [
-          "How We Got to Now",
-          "In the Browser & On the Server",
-          "Objects & Core Types",
-          "Exercise: Practice Making Objects & Functions"
+          "Notes",
+          "Assignments"
         ]
       },
-      {
-        "title": "Fun with Functions",
-        "lectures": [
-          "Expressions & Declarations",
-          "Higher Order Functions",
-          "Exercise: Array.prototype.sort",
-          "Closures",
-          "Exercise: Make an Accumulator",
-          "Objects & Inheritance",
-          "Exercise: Turducken"
-        ]
-      },
-      {
-        "title": "npm & Node",
-        "lectures": [
-          "Installation",
-          "Using npm and the Node REPL",
-          "Using `require` and `module`",
-          "The Event Loop: The What and Why of Asynchronous Programming",
-          "Exercise: Your First Webserver"
-        ]
-      },
-      {
-        "title": "Building Web Apps with Node & Express",
-        "lectures": [
-          "Installing Express",
-          "Typical Structure of an Express Web Application",
-          "Incorporating SQL: An Exercise in Asynchronous Patience",
-          "Exercise: Port Sinatra to Express"
-        ]
-      },
-      {
-        "title": "Building & Deploying Node APIs",
-        "lectures": []
-      }
-    ]
-  },
 
-  {
-    "title": "Fundamentals of Programming",
-    "chapters": [
       {
-        "title": "Introduction to Ruby",
+        "title": "Problem Solving",
         "lectures": [
-          "Welcome to Ruby",
-          "Core Data Types",
-          "Iterators & Blocks",
-          "Flow Control & Conditionals"
+          "Algorithms",
+          "Assignment: Make a Paper Snowflake",
+          "Assignment: Make a PB&J"
+        ]
+      },
+
+      {
+        "title": "Workflow",
+        "lectures": [
+          "Navigation Mac OS X",
+          "Mac Keyboard Shortcuts",
+          "Assignment: Shortcuts You Should Know",
+          "Assignment: Things to Try"
+        ]
+      },
+
+      {
+        "title": "Effective Searching",
+        "lectures": [
+          "Effective Searching"
+        ]
+      },
+
+      {
+        "title": "The Terminal",
+        "lectures": [
+          "The Command Line",
+          "Example Commands",
+          "Assignment: Learn the Command Line"
+        ]
+      },
+
+      {
+        "title": "The Big Picture",
+        "lectures": [
+          "Notes",
+          "Assignment"
+        ]
+      },
+
+      {
+        "title": "Environment Setup",
+        "lectures": [
+          "Notes",
+          "Assignment"
+        ]
+      },
+
+      {
+        "title": "Hello World",
+        "lectures": [
+          "Notes",
+          "Assignment"
+        ]
+      },
+
+      {
+        "title": "Programming Grammar",
+        "lectures": [
+          "Values & Types",
+          "Variables",
+          "Assignment: Variables Worksheet",
+          "Commands",
+          "Comments",
+          "Assignment: Madlibs"
+        ]
+      },
+
+      {
+        "title": "Programming Expressions",
+        "lectures": [
+          "Operators",
+          "Conditionals",
+          "Assignment: Control Flow",
+          "Assignment: Conditionals Worksheet",
+          "Assignment: Candy Machine"
+        ]
+      },
+
+      {
+        "title": "Iterators",
+        "lectures": [
+          "Blocks",
+          "Loops",
+          "Assignment: Loops Worksheet",
+          "More Loops",
+          "Assignment: More Loops Worksheet"
+        ]
+      },
+
+      {
+        "title": "Data Structures",
+        "lectures": [
+          "Arrays",
+          "Assignment: Arrays Worksheet",
+          "Assignment: Account Generator",
+          "Hashes",
+          "Assignment: Hash Worksheet",
+          "Assignment: Account Generator Continued"
         ]
       }
     ]
