@@ -38,6 +38,10 @@ code {
 
   ol {
     list-style: decimal-leading-zero inside;
+
+    > li {
+      margin: 0.75rem 0;
+    }
   }
 }
 
