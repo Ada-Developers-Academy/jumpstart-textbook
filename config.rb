@@ -60,7 +60,7 @@ activate :syntax, line_numbers: true
 activate :deploy do |deploy|
   deploy.build_before = true
   deploy.method = :git
-  deploy.remote = 'git@github.com:Ada-Developers-Academy/textbook.git'
+  deploy.remote = 'git@github.com:Ada-Developers-Academy/jumpstart-textbook.git'
   deploy.branch = 'gh-pages'
 end
 
@@ -75,6 +75,6 @@ configure :build do
   activate :minify_javascript
   activate :asset_hash
   activate :relative_assets
-  set :site_url, "/textbook"
+  set :site_url, "/jumpstart-textbook"
 end
 
