@@ -40,6 +40,7 @@ $action-color: $ada-med-green1;
 // Border
 $base-border-color: $light-gray;
 $base-border: 1px solid $base-border-color;
+$border-heading: 1px solid lighten($ada-light-green, 45%);
 
 // Background Colors
 $base-background-color: #fff;

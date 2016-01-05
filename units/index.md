@@ -9,6 +9,7 @@ Whether you have gone through a traditional post-secondary program recently or n
 
 ### Problem Solving 
 Breaking down complex problems is a fundamental skill as a software engineer. While we will be doing this for years to come, we want to give you an opportunity to explore problem solving in programatic ways and exploring topics like:
+
 - input
 - output
 - algorithms
