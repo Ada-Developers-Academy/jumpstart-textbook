@@ -1,12 +1,14 @@
 # Ada Developer Academy "Textbook"
 
-This project is a platform for organizing and distributing the curriculum for [Ada Developers Academy](http://adadevelopersacademy.org) in Seattle, WA, USA. This isn't a textbook in the conventional sense; the documents herein are meant to supplement lectures, workshops, exercises, and projects delivered in the Ada classroom.
+This project is a platform for organizing and distributing the _Jump Start_ curriculum for [Ada Developers Academy](http://adadevelopersacademy.org) in Seattle, WA, USA. This is not the primary classroom curriculum; Jump Start is a prepatory exercise for folks preparing to enter Ada.
 
-This is a [Middleman](https://middlemanapp.com/) project; the [built, static-site is available on GitHub Pages](http://ada-developers-academy.github.io/textbook/) or by browsing the [gh-pages branch of this repo](https://github.com/Ada-Developers-Academy/textbook/tree/gh-pages).
+The [Ada Classroom Curriculum](https://github.com/Ada-Developers-Academy/textbook) is also available on Github.
+
+This is a [Middleman](https://middlemanapp.com/) project; the [built, static-site is available on GitHub Pages](http://ada-developers-academy.github.io/jumpstart-textbook) or by browsing the [gh-pages branch of this repo](https://github.com/Ada-Developers-Academy/jumpstart-textbook/tree/gh-pages).
 
 ## Textbook Structure
 
-Each portion of the Ada curriciulum is broken into units. Each unit into chapters, and each chapter into lectures. Every unit, chapter, and lecture is represented by a markdown file, organized in the `/units` directory as described by the table of contents located in `/data/toc.json`.
+Each portion of the Jump Start curriciulum is broken into units. Each unit into chapters, and each chapter into lectures. Every unit, chapter, and lecture is represented by a markdown file, organized in the `/units` directory as described by the table of contents located in `/data/toc.json`.
 
 ## Creating New Textbook Content
 
@@ -24,5 +26,5 @@ Please be aware that every deploy force-pushes over the existing deploy. __The g
 
 This project is released under the MIT License. Please see the accompanying [LICENSE.md](https://github.com/Ada-Developers-Academy/textbook/blob/master/LICENSE.md) file for more details.
 
-[Ada Developers Academy](http://adadevelopersacademy.org)'s Curriculum is licensed [Creative Commons Attribution-ShareAlike 4.0](http://creativecommons.org/licenses/by-sa/4.0/).
+[Ada Developers Academy](http://adadevelopersacademy.org)'s Jump Start Curriculum is licensed [Creative Commons Attribution-ShareAlike 4.0](http://creativecommons.org/licenses/by-sa/4.0/).
 ![Creative Commons License](http://i.creativecommons.org/l/by-sa/4.0/80x15.png)
